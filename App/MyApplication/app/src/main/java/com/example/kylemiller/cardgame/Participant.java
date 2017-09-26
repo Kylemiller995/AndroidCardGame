@@ -7,7 +7,8 @@ import java.util.ArrayList;
  */
 
 public interface Participant {
-
     ArrayList<Card> getHand();
     void addCard(Card card);
+    String getChoice();
+    void setChoice(String choice);
 }

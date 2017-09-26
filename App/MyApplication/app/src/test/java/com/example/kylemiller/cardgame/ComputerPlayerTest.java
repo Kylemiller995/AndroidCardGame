@@ -36,8 +36,7 @@ public class ComputerPlayerTest {
 
     @Test
     public void setRandomName() {
-        ////NEEDS MOCKITO
-
+        //mockito maybe needed?
     }
 
     @Test

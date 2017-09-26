@@ -40,7 +40,16 @@ public class BlackjackDealer implements Dealer {
         }
     }
 
-    public void deal(Player player){
+    public void deal(Participant player){
         player.addCard(deck.remove(0));
     }
+
+    public ArrayList<Card> getDeck() {
+        return deck;
+    }
+
+
+
 }
+
+

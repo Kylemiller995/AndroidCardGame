@@ -72,10 +72,12 @@ public class BlackjackGameTest {
     public void dealerGetsCards() {
         blackjack.addPlayer(humanPlayer);
         blackjack.addPlayer(computerPlayer);
-        blackjackDealer.startingDeal(blackjack.getGameTable());
+        Card card1 = new Card(CardSuit.CLUBS,CardValue.FOUR);
+        Card card2 = new Card(CardSuit.CLUBS,CardValue.NINE);
+        computerPlayer.getHand().add(card1);
+        computerPlayer.getHand().add(card2);
         blackjack.playTurn("stick");
-        assertEquals(blackjack.getGameTable().get(1).getHand().size(), 2 );
-//needs work
+        assertEquals(blackjack.getGameTable().get(1).getHand().size(), 3 );
     }
 
     @Test
@@ -86,7 +88,6 @@ public class BlackjackGameTest {
         Card card2 = new Card(CardSuit.CLUBS,CardValue.THREE);
         computerPlayer.getHand().add(card1);
         computerPlayer.getHand().add(card2);
-//        blackjack.blackjackDealer.getDeck().add(new Card(CardSuit.CLUBS, CardValue.FOUR));
         blackjack.playTurn("stick");
         assertEquals(blackjack.getGameTable().get(1).getHand().size(), 3);
 
@@ -133,6 +134,12 @@ public class BlackjackGameTest {
 
 
 
+    }
+
+    @Test
+    public void checkSitDown(){
+        blackjack.sitDownAtTable(humanPlayer);
+        assertEquals(blackjack.getGameTable().size(), 2);
     }
 
 

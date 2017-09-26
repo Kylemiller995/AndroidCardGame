@@ -10,12 +10,10 @@ public class ComputerPlayer implements Participant {
 
     String name;
     ArrayList<Card> hand;
-    String choice;
 
     public ComputerPlayer() {
         this.name = getRandomName();
         this.hand = new ArrayList<>();
-        this.choice = "";
     }
 
     public String getName() {
@@ -42,11 +40,5 @@ public class ComputerPlayer implements Participant {
         hand.add(card);
     }
 
-    public String getChoice() {
-        return choice;
-    }
 
-    public void setChoice(String choice) {
-        this.choice = choice;
-    }
 }

@@ -9,12 +9,12 @@ import java.util.ArrayList;
 public class Player implements Participant{
     String name;
     ArrayList<Card> hand;
-    String choice;
+    int highScore;
 
     public Player(String name) {
         this.name = name;
         this.hand = new ArrayList<Card>();
-        this.choice = "";
+        this.highScore = highScore;
     }
 
     public String getName() {
@@ -33,12 +33,4 @@ public class Player implements Participant{
         hand.add(card);
     }
 
-
-    public String getChoice() {
-        return choice;
-    }
-
-    public void setChoice(String choice) {
-        this.choice = choice;
-    }
 }

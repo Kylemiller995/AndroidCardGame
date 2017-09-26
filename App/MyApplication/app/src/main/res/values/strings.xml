@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CardGame</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="home_play">Play</string>
+    <string name="profiles">Profiles</string>
+    <string name="highscores">HighScores</string>
+    <string name="home_play_button">Play Game</string>
+    <string name="profiles_home">Profiles</string>
+    <string name="play_game">Deal Cards</string>
+    <string name="choose_amount">choose amount of decks to play with</string>
 </resources>

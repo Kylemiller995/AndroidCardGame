@@ -1,12 +1,13 @@
 package com.example.kylemiller.cardgame;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by kylemiller on 23/09/2017.
  */
 
-public class BlackjackGame implements CardGame {
+public class BlackjackGame implements CardGame, Serializable {
 
     ArrayList<Participant> gameTable;
     BlackjackDealer blackjackDealer;
@@ -38,7 +39,6 @@ public class BlackjackGame implements CardGame {
                 dealerTurn();
                 break;
         }
-
     }
 
 
@@ -69,12 +69,14 @@ public class BlackjackGame implements CardGame {
         else return gameTable.get(0);
     }
 
-    public boolean checkBust(Participant player){
-        if( sumHand(player) >=22){
+    public boolean checkBustAndBlackjack(Participant player){
+        if( sumHand(player) >=22 || sumHand(player) == 21){
             return true;
         }
         else return false;
     }
+
+
 
 
     public Participant checkBlackjack(){
@@ -85,6 +87,12 @@ public class BlackjackGame implements CardGame {
             }
         }
         return null;
+    }
+
+    public void sitDownAtTable(Participant person){
+        gameTable.add(person);
+        ComputerPlayer cpu = new ComputerPlayer();
+        gameTable.add(cpu);
     }
 
 

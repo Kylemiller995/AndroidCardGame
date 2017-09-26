@@ -35,11 +35,6 @@ public class ComputerPlayerTest {
     }
 
     @Test
-    public void setRandomName() {
-        //mockito maybe needed?
-    }
-
-    @Test
     public void canAddCard(){
         Card card = new Card(CardSuit.CLUBS, CardValue.ACE);
         computerPlayer.addCard(card);

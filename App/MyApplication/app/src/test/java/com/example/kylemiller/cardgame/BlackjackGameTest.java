@@ -130,7 +130,7 @@ public class BlackjackGameTest {
         Card card4 = new Card(CardSuit.CLUBS,CardValue.THREE);
         humanPlayer.getHand().add(card3);
         humanPlayer.getHand().add(card4);
-        blackjack.checkBust(humanPlayer);
+        blackjack.checkBustAndBlackjack(humanPlayer);
 
 
 

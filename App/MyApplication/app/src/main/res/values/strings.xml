@@ -12,6 +12,6 @@
     <string name="stick">Stick</string>
     <string name="return_home">Home</string>
     <string name="winner_message">The winner is</string>
-    <string name="human_message">Your Score was!</string>
+    <string name="human_message">Your Score was</string>
     <string name="play_again">Play Again</string>
 </resources>

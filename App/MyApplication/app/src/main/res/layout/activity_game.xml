@@ -32,18 +32,6 @@
         android:layout_marginTop="24dp"
         app:layout_constraintTop_toBottomOf="@+id/human_card_2" />
 
-    <TextView
-        android:id="@+id/displayScore"
-        android:layout_width="wrap_content"
-        android:layout_height="17dp"
-        android:text="TextView"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/dealer_card_2"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent" />
-
     <ImageView
         android:id="@+id/table_background"
         android:layout_width="395dp"

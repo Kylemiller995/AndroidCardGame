@@ -38,9 +38,9 @@ public class EndGameActivity extends AppCompatActivity {
         Participant humanPlayer = game.getGameTable().get(0);
         Participant computerPlayer = game.getGameTable().get(1);
 
-        congrats.setText(winner.getName());
+        congrats.setText(winner.getName()+ " wins!");
 
-        computerMessage.setText("The dealer, " + computerPlayer.getName() + ", score was");
+        computerMessage.setText("The dealer, " + computerPlayer.getName() + "'s, score was");
         computerScore.setText(String.valueOf(game.sumHand(computerPlayer)));
         scoreHuman.setText(String.valueOf(game.sumHand(humanPlayer)));
 

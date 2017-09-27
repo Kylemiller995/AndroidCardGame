@@ -142,5 +142,13 @@ public class BlackjackGameTest {
         assertEquals(blackjack.getGameTable().size(), 2);
     }
 
+    @Test
+    public void checkAceCheker(){
+        Card card1 = new Card(CardSuit.CLUBS,CardValue.ACE);
+        Card card2 = new Card(CardSuit.CLUBS,CardValue.ACE);
+        humanPlayer.addCard(card1);
+        humanPlayer.addCard(card2);
+        assertEquals(blackjack.sumHand(humanPlayer), 12);
+    }
 
 }

@@ -11,4 +11,6 @@
     <string name="Twist">Twist</string>
     <string name="stick">Stick</string>
     <string name="return_home">Home</string>
+    <string name="winner_message">The winner is</string>
+    <string name="human_message">Your Score was!</string>
 </resources>

@@ -33,7 +33,6 @@ public class GameActivity extends AppCompatActivity {
         player = new Player("Kyle");
         game.sitDownAtTable(player);
         dealer.startingDeal(game.getGameTable());
-        game.doubleAceCheck();
 
         if(game.checkBustAndBlackjack(player)){
             Intent intent1 = new Intent(this, EndGameActivity.class);
@@ -50,7 +49,6 @@ public class GameActivity extends AppCompatActivity {
             intent1.putExtra("game", game);
             startActivity(intent1);
         }
-
         output.setText(String.valueOf(game.sumHand(player)));
     }
 

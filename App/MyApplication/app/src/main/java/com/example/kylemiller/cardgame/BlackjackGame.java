@@ -34,11 +34,9 @@ public class BlackjackGame implements CardGame, Serializable {
         switch (choice.toLowerCase()) {
             case "twist":
                 blackjackDealer.deal(gameTable.get(0));
-                doubleAceCheck();
                 break;
             case "stick":
                 dealerTurn();
-                doubleAceCheck();
                 break;
         }
     }
@@ -73,13 +71,19 @@ public class BlackjackGame implements CardGame, Serializable {
     public Participant getWinner() {
         int playerHandValue = sumHand(gameTable.get(0));
         int dealerHandValue = sumHand(gameTable.get(1));
-        if (playerHandValue <= dealerHandValue && dealerHandValue <= 21) {
-            return gameTable.get(1);
-        } else if (playerHandValue < 22) {
-            return gameTable.get(0);
+        if(checkBust(gameTable.get(0))){
+            playerHandValue =- 400;
         }
-        return null;
+        if(checkBust(gameTable.get(1))){
+            dealerHandValue =-400;
+        }
+        if (playerHandValue <= dealerHandValue) {
+            return gameTable.get(1);
+        } else return gameTable.get(0);
     }
+
+
+//    check if bust if not bust then check who has higher cards
 
     public boolean checkBustAndBlackjack(Participant player) {
         if (sumHand(player) >= 22 || sumHand(player) == 21) {
@@ -95,6 +99,13 @@ public class BlackjackGame implements CardGame, Serializable {
             }
         }
         return null;
+    }
+
+    public boolean checkBust(Participant person){
+        if(sumHand(person) >= 22){
+            return true;
+        }
+        else return false;
     }
 
     public void sitDownAtTable(Participant person) {

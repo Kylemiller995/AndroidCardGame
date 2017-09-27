@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.HashMap;
+
 public class GameActivity extends AppCompatActivity {
 
     BlackjackGame game;
@@ -68,9 +70,22 @@ public class GameActivity extends AppCompatActivity {
         player = new Player("Kyle");
         game.sitDownAtTable(player);
         dealer.startingDeal(game.getGameTable());
+        HashMap<CardSuit, String> setUpSuit = new HashMap<>();
+        setUpSuit.put(CardSuit.CLUBS, "@drawable/clubs");
+        setUpSuit.put(CardSuit.HEARTS, "@drawable/hearts");
+        setUpSuit.put(CardSuit.DIAMONDS, "@drawable/diamonds");
+        setUpSuit.put(CardSuit.SPADES, "@drawable/spades");
 
-//        human_card1_suit.setImageDrawable(game.getGameTable().get(0).getHand().get(0).getCardSuit());
-//        human_card2_suit.setImageDrawable();
+        int humanCard1Suit = getResources().getIdentifier(setUpSuit.get(player.getHand().get(0).getCardSuit()), null, getPackageName());
+        human_card1_suit.setImageResource(humanCard1Suit);
+
+        int humanCard2Suit = getResources().getIdentifier(setUpSuit.get(player.getHand().get(1).getCardSuit()), null, getPackageName());
+        human_card2_suit.setImageResource(humanCard2Suit);
+
+        int dealerCard2Suit = getResources().getIdentifier(setUpSuit.get(game.getGameTable().get(1).getHand().get(1).getCardSuit()), null, getPackageName());
+        dealer_card2_suit.setImageResource(dealerCard2Suit);
+
+
 
         if(game.checkBustAndBlackjack(player)){
             Intent intent1 = new Intent(this, EndGameActivity.class);

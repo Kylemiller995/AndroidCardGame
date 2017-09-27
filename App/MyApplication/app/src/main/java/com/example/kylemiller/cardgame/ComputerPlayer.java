@@ -1,12 +1,13 @@
 package com.example.kylemiller.cardgame;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by kylemiller on 22/09/2017.
  */
 
-public class ComputerPlayer implements Participant {
+public class ComputerPlayer implements Participant, Serializable {
 
     String name;
     ArrayList<Card> hand;

@@ -1,10 +1,12 @@
 package com.example.kylemiller.cardgame;
 
+import java.io.Serializable;
+
 /**
  * Created by kylemiller on 22/09/2017.
  */
 
-public class Card {
+public class Card implements Serializable {
 
     CardSuit cardSuit;
     CardValue cardValue;

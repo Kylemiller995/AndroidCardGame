@@ -22,7 +22,7 @@ public class BlackjackGame implements CardGame, Serializable {
         return gameTable;
     }
 
-    public void addPlayer(Participant player){
+    public void addPlayer(Participant player) {
         gameTable.add(player);
     }
 
@@ -30,8 +30,8 @@ public class BlackjackGame implements CardGame, Serializable {
         return blackjackDealer;
     }
 
-    public void playTurn(String choice){
-        switch(choice.toLowerCase()){
+    public void playTurn(String choice) {
+        switch (choice.toLowerCase()) {
             case "twist":
                 blackjackDealer.deal(gameTable.get(0));
                 break;
@@ -42,64 +42,74 @@ public class BlackjackGame implements CardGame, Serializable {
     }
 
 
-    public void dealerTurn(){
+    public void dealerTurn() {
         Participant dealer = gameTable.get(1);
         int handValue = sumHand(dealer);
-        while(handValue < 14 ){
+        while (handValue < 14) {
             blackjackDealer.deal(dealer);
             handValue += sumHand(dealer);
         }
     }
 
-    public int sumHand(Participant player){
-       ArrayList<Card> hand = player.getHand();
+    public int sumHand(Participant player) {
+        ArrayList<Card> hand = player.getHand();
         int sum = 0;
-        for(Card card: hand){
+        for (Card card : hand) {
             sum += card.getCardValue().getNumericValue();
         }
         return sum;
     }
 
-    public Participant getWinner(){
+    public Participant getWinner() {
         int playerHandValue = sumHand(gameTable.get(0));
         int dealerHandValue = sumHand(gameTable.get(1));
-        if( playerHandValue <= dealerHandValue){
+        if (playerHandValue <= dealerHandValue && dealerHandValue <= 21) {
             return gameTable.get(1);
+        } else if (playerHandValue < 22) {
+            return gameTable.get(0);
         }
-        else return gameTable.get(0);
+        return null;
     }
 
-    public boolean checkBustAndBlackjack(Participant player){
-        if( sumHand(player) >=22 || sumHand(player) == 21){
+    public boolean checkBustAndBlackjack(Participant player) {
+        if (sumHand(player) >= 22 || sumHand(player) == 21) {
             return true;
-        }
-        else return false;
+        } else return false;
     }
 
-
-
-
-    public Participant checkBlackjack(){
-        for(Participant player: gameTable){
+    public Participant checkBlackjack() {
+        for (Participant player : gameTable) {
             int handValueSum = sumHand(player);
-            if(handValueSum == 21 || player.getHand().size() >= 5){
+            if (handValueSum == 21 || player.getHand().size() >= 5) {
                 return player;
             }
         }
         return null;
     }
 
-    public void sitDownAtTable(Participant person){
+    public void sitDownAtTable(Participant person) {
         gameTable.add(person);
         ComputerPlayer cpu = new ComputerPlayer();
         gameTable.add(cpu);
     }
 
+    public void doubleAceCheck() {
+        int counter = 0;
+        for (Participant person : gameTable) {
+            for (Card card : person.getHand()) {
+                if (card.getCardValue() == CardValue.ACE) {
+                    counter += 1;
+                    if (counter > 1) {
+                        card.cardValue.setNumericValue(1);
+                        return;
+                    }
+                }
+            }
+        }
+    }
 
 
 }
-
-
 
 
 

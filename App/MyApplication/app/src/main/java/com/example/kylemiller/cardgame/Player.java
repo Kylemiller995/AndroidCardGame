@@ -1,12 +1,13 @@
 package com.example.kylemiller.cardgame;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  * Created by kylemiller on 22/09/2017.
  */
 
-public class Player implements Participant{
+public class Player implements Participant, Serializable{
     String name;
     ArrayList<Card> hand;
     int highScore;
@@ -33,4 +34,11 @@ public class Player implements Participant{
         hand.add(card);
     }
 
+    public int getHighScore() {
+        return highScore;
+    }
+
+    public void setHighScore(int highScore) {
+        this.highScore = highScore;
+    }
 }

@@ -23,12 +23,10 @@ public class GameSettingsActivity extends AppCompatActivity {
 
 
 
-
     public void onDealCardsButtonClicked(View button){
         Intent intent = new Intent(this, GameActivity.class );
         int decks = Integer.parseInt(nOfDecksInput.getText().toString());
         intent.putExtra("decks", decks);
-
         startActivity(intent);
     }
 

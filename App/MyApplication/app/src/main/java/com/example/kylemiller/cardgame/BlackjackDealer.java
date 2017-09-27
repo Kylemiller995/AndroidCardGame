@@ -1,5 +1,6 @@
 package com.example.kylemiller.cardgame;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -7,7 +8,7 @@ import java.util.Collections;
  * Created by kylemiller on 22/09/2017.
  */
 
-public class BlackjackDealer implements Dealer {
+public class BlackjackDealer implements Dealer, Serializable {
 
     int amountOfDecks;
     ArrayList<Card> deck;

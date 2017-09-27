@@ -36,7 +36,7 @@ public class GameActivity extends AppCompatActivity {
 
         if(game.checkBustAndBlackjack(player)){
             Intent intent1 = new Intent(this, EndGameActivity.class);
-            intent1.putExtra("player", game);
+            intent1.putExtra("game", game);
             startActivity(intent1);
         }
         output.setText(String.valueOf(game.sumHand(player)));
@@ -46,18 +46,19 @@ public class GameActivity extends AppCompatActivity {
         game.playTurn("twist");
         if (game.checkBustAndBlackjack(game.getGameTable().get(0))){
             Intent intent1 = new Intent(this, EndGameActivity.class);
-            intent1.putExtra("player", game);
+            intent1.putExtra("game", game);
             startActivity(intent1);
         }
 
         output.setText(String.valueOf(game.sumHand(player)));
     }
+//  Caused by: java.lang.RuntimeException: Parcelable encountered IOException writing serializable object (name = com.example.kylemiller.cardgame.BlackjackGame)
 
 
     public void onStickButtonClicked(View button){
         game.playTurn("stick");
         Intent intent1 = new Intent(this, EndGameActivity.class);
-        intent1.putExtra("player", game);
+        intent1.putExtra("game", game);
         startActivity(intent1);
     }
 

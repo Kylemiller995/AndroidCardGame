@@ -92,13 +92,13 @@ public class GameActivity extends AppCompatActivity {
         setUpValue.put(CardValue.KING, "K");
         setUpValue.put(CardValue.ACE, "A");
 
-        int humanCard1Suit = getResources().getIdentifier(setUpSuit.get(player.getHand().get(0).getCardSuit()), null, getPackageName());
+        int humanCard1Suit = getResources().getIdentifier(setUpSuit.get(game.getGameTable().get(0).getHand().get(0).getCardSuit()), null, getPackageName());
         human_card1_suit.setImageResource(humanCard1Suit);
 
         String humanCard1Suitx = setUpValue.get(player.getHand().get(0).getCardValue());
         human_card1_num.setText(humanCard1Suitx);
 
-        int humanCard2Suit = getResources().getIdentifier(setUpSuit.get(player.getHand().get(1).getCardSuit()), null, getPackageName());
+        int humanCard2Suit = getResources().getIdentifier(setUpSuit.get(game.getGameTable().get(0).getHand().get(1).getCardSuit()), null, getPackageName());
         human_card2_suit.setImageResource(humanCard2Suit);
 
         human_card2_num.setText(setUpValue.get(player.getHand().get(0).getCardValue()));

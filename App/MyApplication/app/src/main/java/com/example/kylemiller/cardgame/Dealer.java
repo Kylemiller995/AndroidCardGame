@@ -9,4 +9,5 @@ import java.util.ArrayList;
 public interface Dealer {
     void startingDeal(ArrayList<Participant> players);
     void deal(Participant player);
+    ArrayList<Card> getDeck();
 }

@@ -20,8 +20,6 @@ public class GameSettingsActivity extends AppCompatActivity {
         nOfDecksInput = (TextView) findViewById(R.id.amount_of_decks_input);
     }
 
-
-
     public void onDealCardsButtonClicked(View button){
         Intent intent = new Intent(this, GameActivity.class );
         int decks = Integer.parseInt(nOfDecksInput.getText().toString());

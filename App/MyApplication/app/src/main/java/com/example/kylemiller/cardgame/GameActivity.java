@@ -16,13 +16,8 @@ public class GameActivity extends AppCompatActivity {
     BlackjackDealer dealer;
     Button twistButton;
     Button stickButton;
-    TextView output;
     Participant player;
-    ImageView dealerCard2;
-    ImageView humanCard1;
-    ImageView humanCard2;
-    ImageView humanCard3;
-    ImageView humanCard4;
+
 
     ImageView human_card1_suit;
     ImageView human_card2_suit;
@@ -36,18 +31,20 @@ public class GameActivity extends AppCompatActivity {
     TextView human_card4_num;
     TextView dealer_card2_num;
 
+    ImageView human_card_3;
+    ImageView human_card_4;
+
+    int counter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
         twistButton = (Button) findViewById(R.id.twist_button);
         stickButton = (Button) findViewById(R.id.stick_button);
-        output = (TextView) findViewById(R.id.displayScore);
-        dealerCard2 = (ImageView) findViewById(R.id.dealer_card_2);
-        humanCard1 = (ImageView) findViewById(R.id.human_card_1);
-        humanCard2 = (ImageView) findViewById(R.id.human_card_2);
-        humanCard3 = (ImageView) findViewById(R.id.human_card_3);
-        humanCard4 = (ImageView) findViewById(R.id.human_card_4);
+
+        human_card_3 = (ImageView) findViewById(R.id.human_card_3);
+        human_card_4 = (ImageView) findViewById(R.id.human_card_4);
 
         human_card1_suit = (ImageView) findViewById(R.id.human_card1_suit);
         human_card2_suit = (ImageView) findViewById(R.id.human_card2_suit);
@@ -104,26 +101,30 @@ public class GameActivity extends AppCompatActivity {
         dealer_card2_suit.setImageResource(dealerCard2Suit);
         dealer_card2_num.setText(setUpValue.get(game.getGameTable().get(1).getHand().get(1).getCardValue()));
 
-
         Card card3 = game.getBlackjackDealer().getDeck().get(0);
         Card card4 = game.getBlackjackDealer().getDeck().get(1);
 
         int card3suit = getResources().getIdentifier(setUpSuit.get(card3.getCardSuit()),null, getPackageName());
         human_card3_suit.setImageResource(card3suit);
-
         human_card3_num.setText(setUpValue.get(card3.getCardValue()));
 
         int card4suit = getResources().getIdentifier(setUpSuit.get(card4.getCardSuit()),null, getPackageName());
         human_card4_suit.setImageResource(card4suit);
         human_card4_num.setText(setUpValue.get(card4.getCardValue()));
 
-
-
         if(game.checkBustAndBlackjack(player)){
             Intent intent1 = new Intent(this, EndGameActivity.class);
             intent1.putExtra("game", game);
             startActivity(intent1);
         }
+        counter = 0;
+        human_card3_suit.setVisibility(View.INVISIBLE);
+        human_card3_num.setVisibility(View.INVISIBLE);
+        human_card_3.setVisibility(View.INVISIBLE);
+
+        human_card4_suit.setVisibility(View.INVISIBLE);
+        human_card4_num.setVisibility(View.INVISIBLE);
+        human_card_4.setVisibility(View.INVISIBLE);
 
     }
 
@@ -134,8 +135,18 @@ public class GameActivity extends AppCompatActivity {
             intent1.putExtra("game", game);
             startActivity(intent1);
         }
-        output.setText(String.valueOf(game.sumHand(player)));
 
+        human_card3_suit.setVisibility(View.VISIBLE);
+        human_card3_num.setVisibility(View.VISIBLE);
+        human_card_3.setVisibility(View.VISIBLE);
+
+        if( counter == 1){
+            human_card4_suit.setVisibility(View.VISIBLE);
+            human_card4_num.setVisibility(View.VISIBLE);
+            human_card_4.setVisibility(View.VISIBLE);
+
+        }
+        counter += 1;
     }
 
     public void onStickButtonClicked(View button){

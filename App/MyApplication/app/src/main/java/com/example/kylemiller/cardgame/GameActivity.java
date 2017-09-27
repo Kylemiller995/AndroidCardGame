@@ -33,6 +33,7 @@ public class GameActivity extends AppCompatActivity {
         player = new Player("Kyle");
         game.sitDownAtTable(player);
         dealer.startingDeal(game.getGameTable());
+        game.doubleAceCheck();
 
         if(game.checkBustAndBlackjack(player)){
             Intent intent1 = new Intent(this, EndGameActivity.class);
@@ -52,8 +53,6 @@ public class GameActivity extends AppCompatActivity {
 
         output.setText(String.valueOf(game.sumHand(player)));
     }
-//  Caused by: java.lang.RuntimeException: Parcelable encountered IOException writing serializable object (name = com.example.kylemiller.cardgame.BlackjackGame)
-
 
     public void onStickButtonClicked(View button){
         game.playTurn("stick");

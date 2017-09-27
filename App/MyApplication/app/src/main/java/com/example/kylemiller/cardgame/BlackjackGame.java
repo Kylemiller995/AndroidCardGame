@@ -34,9 +34,11 @@ public class BlackjackGame implements CardGame, Serializable {
         switch (choice.toLowerCase()) {
             case "twist":
                 blackjackDealer.deal(gameTable.get(0));
+                doubleAceCheck();
                 break;
             case "stick":
                 dealerTurn();
+                doubleAceCheck();
                 break;
         }
     }
@@ -54,10 +56,18 @@ public class BlackjackGame implements CardGame, Serializable {
     public int sumHand(Participant player) {
         ArrayList<Card> hand = player.getHand();
         int sum = 0;
+        int aceCounter = 0;
         for (Card card : hand) {
             sum += card.getCardValue().getNumericValue();
+            if(card.getCardValue() == CardValue.ACE){
+                aceCounter += 1;
+            }
         }
-        return sum;
+        if(aceCounter > 1){
+            return sum - 10;
+        }
+        else return sum;
+
     }
 
     public Participant getWinner() {
@@ -93,24 +103,28 @@ public class BlackjackGame implements CardGame, Serializable {
         gameTable.add(cpu);
     }
 
-    public void doubleAceCheck() {
-        int counter = 0;
-        for (Participant person : gameTable) {
-            for (Card card : person.getHand()) {
-                if (card.getCardValue() == CardValue.ACE) {
-                    counter += 1;
-                    if (counter > 1) {
-                        card.cardValue.setNumericValue(1);
-                        return;
-                    }
-                }
-            }
-        }
-    }
-
-
 }
 
+
+
+//
+//    public void doubleAceCheck() {
+//        for (Participant person : gameTable) {
+//            int counter = 0;
+//            for (Card card : person.getHand()) {
+//                if (card.getCardValue() == CardValue.ACE) {
+//                    counter += 1;
+//                    if (counter > 1) {
+//                        find the second ace and set it to 1
+//                        card.cardValue.setNumericValue(1);
+//
+//                    }
+//                }
+//            }
+//        }
+//    }
+//
+//
 
 
 

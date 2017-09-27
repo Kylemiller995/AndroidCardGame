@@ -70,20 +70,43 @@ public class GameActivity extends AppCompatActivity {
         player = new Player("Kyle");
         game.sitDownAtTable(player);
         dealer.startingDeal(game.getGameTable());
+
         HashMap<CardSuit, String> setUpSuit = new HashMap<>();
         setUpSuit.put(CardSuit.CLUBS, "@drawable/clubs");
         setUpSuit.put(CardSuit.HEARTS, "@drawable/hearts");
         setUpSuit.put(CardSuit.DIAMONDS, "@drawable/diamonds");
         setUpSuit.put(CardSuit.SPADES, "@drawable/spades");
 
+        HashMap<CardValue, String> setUpValue = new HashMap<>();
+        setUpValue.put(CardValue.TWO, "2");
+        setUpValue.put(CardValue.THREE, "3");
+        setUpValue.put(CardValue.FOUR, "4");
+        setUpValue.put(CardValue.FIVE, "5");
+        setUpValue.put(CardValue.SIX, "6");
+        setUpValue.put(CardValue.SEVEN, "7");
+        setUpValue.put(CardValue.EIGHT, "8");
+        setUpValue.put(CardValue.NINE, "9");
+        setUpValue.put(CardValue.TEN, "10");
+        setUpValue.put(CardValue.JACK, "J");
+        setUpValue.put(CardValue.QUEEN, "Q");
+        setUpValue.put(CardValue.KING, "K");
+        setUpValue.put(CardValue.ACE, "A");
+
         int humanCard1Suit = getResources().getIdentifier(setUpSuit.get(player.getHand().get(0).getCardSuit()), null, getPackageName());
         human_card1_suit.setImageResource(humanCard1Suit);
+
+        String humanCard1Suitx = setUpValue.get(player.getHand().get(0).getCardValue());
+        human_card1_num.setText(humanCard1Suitx);
 
         int humanCard2Suit = getResources().getIdentifier(setUpSuit.get(player.getHand().get(1).getCardSuit()), null, getPackageName());
         human_card2_suit.setImageResource(humanCard2Suit);
 
+        human_card2_num.setText(setUpValue.get(player.getHand().get(0).getCardValue()));
+
         int dealerCard2Suit = getResources().getIdentifier(setUpSuit.get(game.getGameTable().get(1).getHand().get(1).getCardSuit()), null, getPackageName());
         dealer_card2_suit.setImageResource(dealerCard2Suit);
+
+        dealer_card2_num.setText(setUpValue.get(game.getGameTable().get(1).getHand().get(1).getCardValue()));
 
 
 

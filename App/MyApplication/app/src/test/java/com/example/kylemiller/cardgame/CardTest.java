@@ -35,4 +35,13 @@ public class CardTest {
         assertEquals(card.getCardValue().getNumericValue(), 2);
     }
 
+    @Test
+    public void cardstring(){
+        assertEquals(card.cardSuitToString(), "clubs");
+    }
+
+    @Test
+    public void cardeurifhwj(){
+        assertEquals(card.cardNumtoString(), "2");
+    }
 }

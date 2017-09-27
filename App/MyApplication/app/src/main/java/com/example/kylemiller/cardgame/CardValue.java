@@ -29,10 +29,4 @@ public enum CardValue {
         return numericValue;
     }
 
-    void setNumericValue(int i){
-        this.numericValue = i;
-    }
-
-
-
 }

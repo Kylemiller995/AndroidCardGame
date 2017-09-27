@@ -20,10 +20,17 @@ public class Card implements Serializable {
         return cardSuit;
     }
 
+    public String cardSuitToString(){
+        return cardSuit.name().toLowerCase();
+    }
+
     public CardValue getCardValue() {
         return cardValue;
     }
 
-
+    public String cardNumtoString(){
+        int i = cardValue.getNumericValue();
+        return String.valueOf(i);
+    }
 
 }

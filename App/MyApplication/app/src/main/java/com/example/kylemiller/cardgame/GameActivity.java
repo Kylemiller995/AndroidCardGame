@@ -69,11 +69,16 @@ public class GameActivity extends AppCompatActivity {
         game.sitDownAtTable(player);
         dealer.startingDeal(game.getGameTable());
 
+//        human_card1_suit.setImageDrawable(game.getGameTable().get(0).getHand().get(0).getCardSuit());
+//        human_card2_suit.setImageDrawable();
+
         if(game.checkBustAndBlackjack(player)){
             Intent intent1 = new Intent(this, EndGameActivity.class);
             intent1.putExtra("game", game);
             startActivity(intent1);
         }
+
+//        human_card1_suit.setImageDrawable(player.getHand().get(0).cardSuitToString());
 
         //will be deleted after fix cards and images
         output.setText(String.valueOf(game.sumHand(player)));
@@ -84,7 +89,6 @@ public class GameActivity extends AppCompatActivity {
 
     public void onTwistButtonClicked(View button){
         game.playTurn("twist");
-
         if (game.checkBustAndBlackjack(game.getGameTable().get(0))){
             Intent intent1 = new Intent(this, EndGameActivity.class);
             intent1.putExtra("game", game);

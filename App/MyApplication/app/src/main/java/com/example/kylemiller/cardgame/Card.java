@@ -24,4 +24,6 @@ public class Card implements Serializable {
         return cardValue;
     }
 
+
+
 }

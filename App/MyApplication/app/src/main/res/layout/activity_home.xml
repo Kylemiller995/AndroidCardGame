@@ -4,55 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kylemiller.cardgame.HomeActivity">
+    tools:context="com.example.kylemiller.cardgame.HomeActivity"
+    android:background="@color/colorPrimary">
+    >
 
     <Button
         android:id="@+id/play_button_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="106dp"
         android:onClick="onPlayButtonClicked"
         android:text="@string/home_play_button"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <Button
         android:id="@+id/profiles_button_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/profiles_home"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/play_button_home"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent" />
+        android:layout_marginTop="16dp"
+        android:text="@string/profiles_home"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/play_button_home" />
 
     <Button
         android:id="@+id/highscore_button_home"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="140dp"
+        android:layout_height="50dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
         android:text="@string/highscores"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@+id/profiles_button_home"
-        android:layout_marginLeft="8dp"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="CARD GAME HOME"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="5dp"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintHorizontal_bias="0.502" />
+        app:layout_constraintTop_toBottomOf="@+id/profiles_button_home" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="235dp"
+        android:layout_height="178dp"
+        app:srcCompat="@drawable/logo"
+        android:layout_marginRight="16dp"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintHorizontal_bias="0.536"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginTop="16dp" />
+
 </android.support.constraint.ConstraintLayout>

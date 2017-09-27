@@ -40,6 +40,7 @@ public class GameActivity extends AppCompatActivity {
             startActivity(intent1);
         }
         output.setText(String.valueOf(game.sumHand(player)));
+
     }
 
     public void onTwistButtonClicked(View button){

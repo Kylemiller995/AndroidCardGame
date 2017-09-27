@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.kylemiller.cardgame.GameSettingsActivity">
+    tools:context="com.example.kylemiller.cardgame.GameSettingsActivity"
+    android:background="@color/colorPrimary">
 
     <Button
         android:id="@+id/startGameButton"
@@ -12,7 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="254dp"
         android:onClick="onDealCardsButtonClicked"
         android:text="@string/play_game"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -21,32 +22,37 @@
 
     <EditText
         android:id="@+id/amount_of_decks_input"
-        android:layout_width="87dp"
-        android:layout_height="44dp"
+        android:layout_width="88dp"
+        android:layout_height="33dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="22dp"
+        android:background="@android:color/white"
         android:ems="10"
         android:hint="Pick Here!"
         android:inputType="number"
         android:text="1"
         android:textAlignment="center"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <TextView
         android:id="@+id/textView2"
-        android:layout_width="246dp"
-        android:layout_height="44dp"
+        android:layout_width="248dp"
+        android:layout_height="66dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="32dp"
         android:text="@string/choose_amount"
         android:textAlignment="center"
-        android:textSize="18sp"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp"
-        android:layout_marginLeft="8dp"
+        android:textColor="@android:color/white"
+        android:textSize="24sp"
         app:layout_constraintLeft_toLeftOf="parent"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

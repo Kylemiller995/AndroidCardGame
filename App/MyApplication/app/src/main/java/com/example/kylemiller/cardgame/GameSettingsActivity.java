@@ -18,7 +18,6 @@ public class GameSettingsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_game_settings);
         dealCardsButton = (Button) findViewById(R.id.startGameButton);
         nOfDecksInput = (TextView) findViewById(R.id.amount_of_decks_input);
-
     }
 
 

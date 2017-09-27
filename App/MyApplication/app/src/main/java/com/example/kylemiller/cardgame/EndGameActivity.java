@@ -3,13 +3,13 @@ package com.example.kylemiller.cardgame;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
 public class EndGameActivity extends AppCompatActivity {
 
     TextView computerScore;
-//    TextView winningName;
     TextView congrats;
     TextView scoreHuman;
     TextView computerMessage;
@@ -25,13 +25,10 @@ public class EndGameActivity extends AppCompatActivity {
         home = (Button) findViewById(R.id.home_button);
         computerScore = (TextView) findViewById(R.id.computer_score);
         scoreHuman = (TextView) findViewById(R.id.human_score);
-
         computerMessage = (TextView) findViewById(R.id.computer_message);
         humanMessage = (TextView) findViewById(R.id.human_message);
-
-//        winningName = (TextView) findViewById(R.id.winning_name);
         congrats = (TextView) findViewById(R.id.congrats);
-
+        play_again = (Button) findViewById(R.id.home_button);
 
 
         Intent intent = getIntent();
@@ -47,5 +44,15 @@ public class EndGameActivity extends AppCompatActivity {
         computerScore.setText(String.valueOf(game.sumHand(computerPlayer)));
         scoreHuman.setText(String.valueOf(game.sumHand(humanPlayer)));
 
+    }
+
+    public void onHomeButtonClicked(View button){
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+    }
+
+    public void onPlayAgainButtonClicked(View button){
+        Intent intent = new Intent(this, GameSettingsActivity.class);
+        startActivity(intent);
     }
 }

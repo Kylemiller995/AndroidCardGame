@@ -22,6 +22,18 @@ public class GameActivity extends AppCompatActivity {
     ImageView humanCard3;
     ImageView humanCard4;
 
+    ImageView human_card1_suit;
+    ImageView human_card2_suit;
+    ImageView human_card3_suit;
+    ImageView human_card4_suit;
+    ImageView dealer_card2_suit;
+
+    TextView human_card1_num;
+    TextView human_card2_num;
+    TextView human_card3_num;
+    TextView human_card4_num;
+    TextView dealer_card2_num;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +46,18 @@ public class GameActivity extends AppCompatActivity {
         humanCard2 = (ImageView) findViewById(R.id.human_card_2);
         humanCard3 = (ImageView) findViewById(R.id.human_card_3);
         humanCard4 = (ImageView) findViewById(R.id.human_card_4);
+
+        human_card1_suit = (ImageView) findViewById(R.id.human_card1_suit);
+        human_card2_suit = (ImageView) findViewById(R.id.human_card2_suit);
+        human_card3_suit = (ImageView) findViewById(R.id.human_card3_suit);
+        human_card4_suit = (ImageView) findViewById(R.id.human_card4_suit);
+        dealer_card2_suit = (ImageView) findViewById(R.id.dealer_card2_suit);
+
+        human_card1_num = (TextView) findViewById(R.id.human_card1_num);
+        human_card2_num = (TextView) findViewById(R.id.human_card2_num);
+        human_card3_num = (TextView) findViewById(R.id.human_card3_num);
+        human_card4_num = (TextView) findViewById(R.id.human_card4_num);
+        dealer_card2_num = (TextView) findViewById(R.id.dealer_card2_num);
 
         Intent intent = getIntent();
         Bundle extras = intent.getExtras();
@@ -53,6 +77,8 @@ public class GameActivity extends AppCompatActivity {
 
         //will be deleted after fix cards and images
         output.setText(String.valueOf(game.sumHand(player)));
+
+
 
     }
 

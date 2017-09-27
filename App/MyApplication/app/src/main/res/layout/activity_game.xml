@@ -98,7 +98,7 @@
         tools:layout_editor_absoluteY="309dp" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/human_card2_suit"
         android:layout_width="30dp"
         android:layout_height="37dp"
         app:srcCompat="@mipmap/ic_launcher_round"
@@ -106,7 +106,7 @@
         tools:layout_editor_absoluteY="346dp" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/human_card1_suit"
         android:layout_width="30dp"
         android:layout_height="37dp"
         app:srcCompat="@mipmap/ic_launcher_round"
@@ -114,23 +114,7 @@
         tools:layout_editor_absoluteY="346dp" />
 
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="30dp"
-        android:layout_height="37dp"
-        app:srcCompat="@mipmap/ic_launcher_round"
-        tools:layout_editor_absoluteX="202dp"
-        tools:layout_editor_absoluteY="309dp" />
-
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="30dp"
-        android:layout_height="37dp"
-        app:srcCompat="@mipmap/ic_launcher_round"
-        tools:layout_editor_absoluteX="202dp"
-        tools:layout_editor_absoluteY="60dp" />
-
-    <ImageView
-        android:id="@+id/imageView12"
+        android:id="@+id/dealer_card2_suit"
         android:layout_width="30dp"
         android:layout_height="37dp"
         app:srcCompat="@mipmap/ic_launcher_round"
@@ -138,15 +122,7 @@
         tools:layout_editor_absoluteY="97dp" />
 
     <ImageView
-        android:id="@+id/imageView8"
-        android:layout_width="30dp"
-        android:layout_height="37dp"
-        app:srcCompat="@mipmap/ic_launcher_round"
-        tools:layout_editor_absoluteX="293dp"
-        tools:layout_editor_absoluteY="309dp" />
-
-    <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/human_card3_suit"
         android:layout_width="30dp"
         android:layout_height="37dp"
         app:srcCompat="@mipmap/ic_launcher_round"
@@ -154,27 +130,51 @@
         tools:layout_editor_absoluteY="346dp" />
 
     <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="30dp"
-        android:layout_height="37dp"
-        app:srcCompat="@mipmap/ic_launcher_round"
-        tools:layout_editor_absoluteX="22dp"
-        tools:layout_editor_absoluteY="309dp" />
-
-    <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/human_card4_suit"
         android:layout_width="30dp"
         android:layout_height="37dp"
         app:srcCompat="@mipmap/ic_launcher_round"
         tools:layout_editor_absoluteX="41dp"
         tools:layout_editor_absoluteY="346dp" />
 
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="30dp"
-        android:layout_height="37dp"
-        app:srcCompat="@mipmap/ic_launcher_round"
-        tools:layout_editor_absoluteX="112dp"
+    <TextView
+        android:id="@+id/human_card3_num"
+        android:layout_width="32dp"
+        android:layout_height="38dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="200dp"
+        tools:layout_editor_absoluteY="60dp" />
+
+    <TextView
+        android:id="@+id/dealer_card2_num"
+        android:layout_width="32dp"
+        android:layout_height="38dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="288dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <TextView
+        android:id="@+id/human_card1_num"
+        android:layout_width="32dp"
+        android:layout_height="38dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="111dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <TextView
+        android:id="@+id/human_card4_num"
+        android:layout_width="32dp"
+        android:layout_height="38dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="309dp" />
+
+    <TextView
+        android:id="@+id/human_card2_num"
+        android:layout_width="32dp"
+        android:layout_height="38dp"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="202dp"
         tools:layout_editor_absoluteY="309dp" />
 
 

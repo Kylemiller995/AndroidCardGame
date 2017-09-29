@@ -130,7 +130,7 @@ public class GameActivity extends AppCompatActivity {
 
     public void onTwistButtonClicked(View button){
         game.playTurn("twist");
-        if (game.checkBustAndBlackjack(game.getGameTable().get(0))){
+        if (game.checkBust(game.getGameTable().get(0))){
             Intent intent1 = new Intent(this, EndGameActivity.class);
             intent1.putExtra("game", game);
             startActivity(intent1);

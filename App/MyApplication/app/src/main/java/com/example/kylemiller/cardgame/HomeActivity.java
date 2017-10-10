@@ -18,6 +18,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
 
         playButton = (Button) findViewById(R.id.play_button_home);
+        profiles = (Button) findViewById(R.id.profiles_button_home);
+        highScores = (Button) findViewById(R.id.highscore_button_home);
     }
 
     public void onPlayButtonClicked(View button){
@@ -25,6 +27,14 @@ public class HomeActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onProfileButtonClicked(View button){
+        Intent intent = new Intent(this, UserProfileCreationActivity.class);
+        startActivity(intent);
+    }
+
+    public void onHighScoreButtonClicked(View button){
+        Intent intent = new Intent(this, HichScoresActivity.class);
+    }
 
 
 

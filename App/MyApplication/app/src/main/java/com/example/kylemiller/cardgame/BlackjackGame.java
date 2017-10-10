@@ -41,7 +41,6 @@ public class BlackjackGame implements CardGame, Serializable {
         }
     }
 
-
     public void dealerTurn() {
         Participant dealer = gameTable.get(1);
         int handValue = sumHand(dealer);
@@ -64,7 +63,7 @@ public class BlackjackGame implements CardGame, Serializable {
         if(aceCounter > 1){
             return sum - 10;
         }
-        else return sum;
+        return sum;
 
     }
 

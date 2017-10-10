@@ -19,15 +19,13 @@
         <activity
             android:name=".GameSettingsActivity"
             android:parentActivityName=".HomeActivity" />
-
         <activity
             android:name=".GameActivity"
             android:parentActivityName=".GameSettingsActivity" />
-
         <activity
             android:name=".EndGameActivity"
-            android:parentActivityName=".GameActivity"
-            ></activity>
+            android:parentActivityName=".GameActivity" />
+        <activity android:name=".UserProfileCreationActivity"></activity>
     </application>
 
 </manifest>

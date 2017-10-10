@@ -16,6 +16,7 @@ public class EndGameActivity extends AppCompatActivity {
     TextView humanMessage;
     Button home;
     Button play_again;
+    TextView bugCatcher;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,7 @@ public class EndGameActivity extends AppCompatActivity {
         humanMessage = (TextView) findViewById(R.id.human_message);
         congrats = (TextView) findViewById(R.id.congrats);
         play_again = (Button) findViewById(R.id.home_button);
+        bugCatcher = (TextView) findViewById(R.id.bug_catcher);
 
 
         Intent intent = getIntent();
@@ -43,7 +45,7 @@ public class EndGameActivity extends AppCompatActivity {
         computerMessage.setText("The dealer, " + computerPlayer.getName() + "'s, score was");
         computerScore.setText(String.valueOf(game.sumHand(computerPlayer)));
         scoreHuman.setText(String.valueOf(game.sumHand(humanPlayer)));
-
+        bugCatcher.setText(computerPlayer.getHand().get(0).cardNumtoString() + computerPlayer.getHand().get(1).cardNumtoString());
     }
 
     public void onHomeButtonClicked(View button){
@@ -55,4 +57,6 @@ public class EndGameActivity extends AppCompatActivity {
         Intent intent = new Intent(this, GameSettingsActivity.class);
         startActivity(intent);
     }
+
+
 }

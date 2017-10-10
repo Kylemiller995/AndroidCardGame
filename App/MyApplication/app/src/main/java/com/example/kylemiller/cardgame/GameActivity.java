@@ -112,11 +112,11 @@ public class GameActivity extends AppCompatActivity {
         human_card4_suit.setImageResource(card4suit);
         human_card4_num.setText(setUpValue.get(card4.getCardValue()));
 
-        if(game.checkBustAndBlackjack(player)){
-            Intent intent1 = new Intent(this, EndGameActivity.class);
-            intent1.putExtra("game", game);
-            startActivity(intent1);
-        }
+//        if(game.checkBustAndBlackjack(player)){
+//            Intent intent1 = new Intent(this, EndGameActivity.class);
+//            intent1.putExtra("game", game);
+//            startActivity(intent1);
+//        }
         counter = 0;
         human_card3_suit.setVisibility(View.INVISIBLE);
         human_card3_num.setVisibility(View.INVISIBLE);
